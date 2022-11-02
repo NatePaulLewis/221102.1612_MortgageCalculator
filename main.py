@@ -1,16 +1,15 @@
-# This is a sample Python script.
+# #Mortgage Calculator
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class MonthlyPaymentFormula:
+    def __init__(self, monthly_int_rate, num_monthly_payments, amount_borrowed, monthly_payment_formula):
+        self.r = monthly_int_rate
+        self.n = num_monthly_payments
+        self.p = amount_borrowed
+        self.c = monthly_payment_formula
+
+    def FixedMortgageCalculation(self):
+        pass
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+formula = ((6.5 / 100 / 12) * 200000) / (1 - ((1 + (6.5 / 100 / 12)) ** (-30 * 12)))
+print(formula)
