@@ -1,0 +1,13 @@
+Mortgage Calculators
+
+- Determines the financial implications of changes in one or more vaiables in a mortagage financing arrangement.
+- The major vaiables in a mortgage calculation include:
+	- Loan Principal
+	- Balance
+	- Periodic Compound Interest Rate
+	- Number of Payments Per Year
+	- Total Number of Payments 
+	- Regular Payment Amount
+	- Other Cost Associated:
+		- Local and State Tax
+		- Insurance
