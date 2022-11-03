@@ -1,15 +1,22 @@
 # #Mortgage Calculator
+# formula = ((6.5 / 100 / 12) * 200000) / (1 - ((1 + (6.5 / 100 / 12)) ** (-30 * 12)))
+# print(formula)
+class MonthlyPaymentFunds:
+    def __init__(self, interest_rate, mortgage_term, principal):
+        self.interest_rate = interest_rate
+        self.mortgage_term = mortgage_term
+        self.principal = principal
 
-class MonthlyPaymentFormula:
-    def __init__(self, monthly_int_rate, num_monthly_payments, amount_borrowed, monthly_payment_formula):
-        self.r = monthly_int_rate
-        self.n = num_monthly_payments
-        self.p = amount_borrowed
-        self.c = monthly_payment_formula
+    def fixedMortgageCalculation(self):
+        self.r = self.interest_rate / 100 / 12
+        self.n = -abs(self.mortgage_term) * 12
+        self.p = self.principal
+        self.c = (self.r * self.p) / (1 - ((1 + self.r) ** self.n))
+        print(self.c)
 
-    def FixedMortgageCalculation(self):
-        pass
+m1 = MonthlyPaymentFunds(6.5, 30, 200000)
+m1.fixedMortgageCalculation()
 
 
-formula = ((6.5 / 100 / 12) * 200000) / (1 - ((1 + (6.5 / 100 / 12)) ** (-30 * 12)))
-print(formula)
+
+
