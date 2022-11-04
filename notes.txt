@@ -3,7 +3,8 @@ Mortgage Calculators
 - The calculator should take inputs from the user
 - Along with providing the monthly payment figure out how to show the interest paid
 - Determines the financial implications of changes in one or more variables in a mortgage financing arrangement.
-- Something that is not mentioned in Wikipedia calculation is the down payment. Implemnent this into the formula so that user can either input a percentage or dollar amount.
+- Something that is not mentioned in Wikipedia calculation is the down payment. Implement this into the formula so that user can either input a percentage or dollar amount.
+- Make sure to convert the figures into dollar amount and two figures after the decimal point.
 - The major variables in a mortgage calculation include:
 	- Loan Principal
 	- Balance
