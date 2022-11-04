@@ -3,34 +3,36 @@
 # print(formula)
 class MonthlyPaymentFunds:
     def __init__(self):
+        self.down_payment = int(input(f"Enter Down Payment amount: "))
         self.interest_rate = float(input(f"Enter interest amount: "))
         self.mortgage_term = int(input(f"Enter mortgage term amount: "))
         self.principal = int(input(f"Enter principal amount: "))
 
     def __repr__(self):
         if self.mortgage_term == 30:
-            return(f"Your monthly Mortgage Payment on a 30yr fixed: {self.c}.")
+            return(f"Your monthly Mortgage Payment on a 30yr fixed: ${self.c:.2f}")
         elif self.mortgage_term == 15:
-            return(f"Your monthly Mortgage Payment on a 15yr fixed: {self.c}")
+            return(f"Your monthly Mortgage Payment on a 15yr fixed: ${self.c:.2f}")
         elif self.mortgage_term == 10:
-            return(f"Your monthly Mortgage Payment on a 10/6 ARM: {self.c}")
+            return(f"Your monthly Mortgage Payment on a 10/6 ARM: ${self.c:.2f}")
         else:
-            return(f"Your monthly Mortgage Payment on a {str(self.mortgage_term)} fixed: {self.c}")
+            return(f"Your monthly Mortgage Payment on a {str(self.mortgage_term)} fixed: ${self.c:.2f}")
 
     def fixedMortgageCalculation(self):
+        self.d = self.down_payment
         self.r = self.interest_rate / 100 / 12
         self.n = -abs(self.mortgage_term) * 12
         self.p = self.principal
-        self.c = (self.r * self.p) / (1 - ((1 + self.r) ** self.n))
+        self.c = (self.r * (self.p - self.d)) / (1 - ((1 + self.r) ** self.n))
         return(self.c)
 
     def totalInterestPaidLifetime(self):
         self.i = self.c * self.n - self.p
-        print(f"Total Interest Paid Over Lifetime: {abs(self.i)}")
+        print(f"Total Interest Paid Over Lifetime: ${abs(self.i):.2f}")
 
     def totalInterestPaid(self):
         self.i = (self.p * self.r - self.c) * (((1 +self.r) ** self.n -1) / self.r) + (self.c * self.n)
-        print(f"Total Interest Paid: {abs(self.i)}")
+        print(f"Total Interest Paid: ${abs(self.i):.2f}")
 
     # def main(self):
     #     self.fixedMortgageCalculation()
