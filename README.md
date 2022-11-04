@@ -1,7 +1,7 @@
 # 221102.1612_MortgageCalculator
 Mortgage Calculator
 
-This is a smple mortgage calculator.
+This is a simple mortgage calculator.
 
 It takes an input for down payment, interest rate, mortgage term, and the principal.
 
