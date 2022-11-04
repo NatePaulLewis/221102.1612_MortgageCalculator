@@ -1,22 +1,20 @@
 # #Mortgage Calculator
-# formula = ((6.5 / 100 / 12) * 200000) / (1 - ((1 + (6.5 / 100 / 12)) ** (-30 * 12)))
-# print(formula)
 class MonthlyPaymentFunds:
     def __init__(self):
-        self.down_payment = int(input(f"Enter Down Payment amount: "))
-        self.interest_rate = float(input(f"Enter interest amount: "))
-        self.mortgage_term = int(input(f"Enter mortgage term amount: "))
-        self.principal = int(input(f"Enter principal amount: "))
+        self.down_payment = int(input(f"How much are you putting down?: "))
+        self.interest_rate = float(input(f"What's the interest rate?: "))
+        self.mortgage_term = int(input(f"What is the duration of the mortgage?: "))
+        self.principal = int(input(f"What is the cost of the home?: "))
 
     def __repr__(self):
         if self.mortgage_term == 30:
-            return(f"Your monthly Mortgage Payment on a 30yr fixed: ${self.c:.2f}")
+            return(f"With a {(float(self.down_payment / self.principal)):,.0%} down payment of ${self.down_payment:,.2f}. A ${self.principal:,.2f} monthly mortgage on a {self.mortgage_term}yr. fixed with a {self.interest_rate:.2f}% APR is: ${self.c:,.2f}")
         elif self.mortgage_term == 15:
-            return(f"Your monthly Mortgage Payment on a 15yr fixed: ${self.c:.2f}")
+            return(f"With a {(float(self.down_payment / self.principal)):,.0%} down payment of ${self.down_payment:,.2f}. A ${self.principal:,.2f} monthly mortgage on a {self.mortgage_term}yr. fixed with a {self.interest_rate:.2f}% APR is: ${self.c:,.2f}")
         elif self.mortgage_term == 10:
-            return(f"Your monthly Mortgage Payment on a 10/6 ARM: ${self.c:.2f}")
+            return(f"With a {(float(self.down_payment / self.principal)):,.0%} down payment of ${self.down_payment:,.2f}. A ${self.principal:,.2f} monthly mortgage on a {self.mortgage_term}/6 ARM {self.interest_rate:.2f}% APR is: ${self.c:,.2f}")
         else:
-            return(f"Your monthly Mortgage Payment on a {str(self.mortgage_term)} fixed: ${self.c:.2f}")
+            return(f"With a {(float(self.down_payment / self.principal)):,.0%} down payment of ${self.down_payment:,.2f}. A ${self.principal:,.2f} monthly mortgage on a {self.mortgage_term}yr. fixed with a {self.interest_rate:.2f}% APR is: ${self.c:,.2f}")
 
     def fixedMortgageCalculation(self):
         self.d = self.down_payment
@@ -27,24 +25,10 @@ class MonthlyPaymentFunds:
         return(self.c)
 
     def totalInterestPaidLifetime(self):
-        self.i = self.c * self.n - self.p
-        print(f"Total Interest Paid Over Lifetime: ${abs(self.i):.2f}")
-
-    def totalInterestPaid(self):
-        self.i = (self.p * self.r - self.c) * (((1 +self.r) ** self.n -1) / self.r) + (self.c * self.n)
-        print(f"Total Interest Paid: ${abs(self.i):.2f}")
-
-    # def main(self):
-    #     self.fixedMortgageCalculation()
-    #     self.totalInterestPaidLifetime()
-    #     return
-
-# m1 = MonthlyPaymentFunds()
-# if __name__ == '__main__':
-#     m1
+        self.i = (self.c * (self.n / 12)) - self.p
+        print(f"Total Interest Paid Over Lifetime: ${abs(self.i):,.2f}")
 
 m1 = MonthlyPaymentFunds()
 m1.fixedMortgageCalculation()
 m1.totalInterestPaidLifetime()
-m1.totalInterestPaid()
 print(m1)
