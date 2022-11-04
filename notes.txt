@@ -1,7 +1,10 @@
 Mortgage Calculators
-
-- Determines the financial implications of changes in one or more vaiables in a mortagage financing arrangement.
-- The major vaiables in a mortgage calculation include:
+- Make a calculator that will tell the monthly payment on a mortgage
+- The calculator should take inputs from the user
+- Along with providing the monthly payment figure out how to show the interest paid
+- Determines the financial implications of changes in one or more variables in a mortgage financing arrangement.
+- Something that is not mentioned in Wikipedia calculation is the down payment. Implemnent this into the formula so that user can either input a percentage or dollar amount.
+- The major variables in a mortgage calculation include:
 	- Loan Principal
 	- Balance
 	- Periodic Compound Interest Rate
