@@ -27,6 +27,7 @@ class MonthlyPaymentFormula:
     def totalInterestPaid(self):
         self.i = ((self.c * (self.n / 12)) - self.p) - -abs(self.p)
         print(f"Interest Amount paid: ${abs(self.i):,.2f}")
+
     def totalPaidWithInterest(self):
         self.i = ((self.c * (self.n / 12)) - self.p)
         print(f"Total paid with interest: ${abs(self.i):,.2f}")
